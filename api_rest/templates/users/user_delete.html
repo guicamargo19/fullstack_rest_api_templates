@@ -1,0 +1,23 @@
+{% extends "global/base.html" %}
+
+{% block content %}
+    <div class="form-wrapper center">
+        <h2>
+            Confirmação
+        </h2>
+        <div>
+            <p>Tem certeza que deseja apagar o usuário: "{{ user.nickname }}"?</p>
+            <form method="post">
+                    <div class="form-content">
+                    <div class="form-group">
+                        <div class="contact-links">
+                            {% csrf_token %}
+                            <button class="btn btn-link btn-delete" type="submit">Apagar</button>
+                            <a class="btn btn-link" href="{% url 'user_list' %}">Cancelar</a>
+                        </div>
+                    </div>
+                </div>
+            </form>
+        </div>
+    </div>
+{% endblock content %}

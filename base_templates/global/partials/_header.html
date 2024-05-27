@@ -1,0 +1,29 @@
+<header class="header">
+    <h1 class="header-heading">
+        <a href="{% url "user_list" %}" class="header-link">
+            Gerenciador de Usuários
+        </a>
+    </h1>
+    <nav class="menu">
+        <ul class="menu-list">
+            <li class="menu-item">
+                <a href="{% url 'user_create' %}" class="menu-link">Criar usuário</a>
+            </li>
+            <li class="menu-item">
+                <a href={% url 'delete_all_users' %} class="menu-link">Apagar todos</a>
+            </li>
+        </ul>
+    </nav>
+    <div class="search">
+        <form action="{% url "search" %}" method="GET">
+            <input 
+                type="text"
+                class="search-input"
+                placeholder="Buscar"
+                id="search"
+                name="q"
+                value="{{request.GET.q.strip}}"
+            >
+        </form>
+    </div>
+</header>

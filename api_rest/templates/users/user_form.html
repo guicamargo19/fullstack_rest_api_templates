@@ -1,0 +1,18 @@
+{% extends "global/base.html" %}
+
+{% block content %}
+    <div class="form-wrapper">
+        <h2 class="center">
+            {{ title }}
+        </h2>
+        <form method="POST">
+            <div class="form-content">
+                <div class="form-group">
+                    {% csrf_token %}
+                    {{ form.as_p }}
+                    <button class="btn" type="submit">{{ button_text }}</button>
+                </div>
+            </div>
+        </form>
+    </div>
+{% endblock content %}

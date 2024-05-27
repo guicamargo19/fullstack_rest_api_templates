@@ -1,0 +1,58 @@
+{% extends "global/base.html" %}
+
+{% block content %}
+{% if users %}
+    <div class="responsive-table">
+        <table class="contacts-table">
+            <caption class="table-caption">
+                Lista de usuários
+            </caption>
+            <thead>
+                <tr class='table-row table-row-header'>
+                    <th class="table-header">ID</th>
+                    <th class="table-header">Usuário</th>
+                    <th class="table-header">Nome completo</th>
+                    <th class="table-header">E-mail</th>
+                    <th class="table-header">Idade</th>
+                    <th class="table-header">Atualizar</th>
+                    <th class="table-header">Apagar</th>
+                </tr>
+            </thead>
+            <tbody>
+                {% for user in users %}
+                    <tr class="table-row">
+                        <td class="table-cel">
+                            {{ user.id }}
+                        </td>
+                        <td class="table-cel">
+                            {{ user.nickname }}
+                        </td>
+                        <td class="table-cel">
+                            {{ user.name }}
+                        </td>
+                        <td class="table-cel">
+                            {{ user.email }}
+                        </td>
+                        <td class="table-cel">
+                            {{ user.age }}
+                        </td>
+                        <td class="table-cel">
+                            <a class="btn btn-link" href="{% url 'user_update' user.id %}">Atualizar</a>
+                        </td>
+                        <td class="table-cel">
+                            <a class="btn btn-link btn-delete" href="{% url 'user_delete' user.id %}">Apagar</a>
+                        </td>
+                    </tr>
+                {% endfor %}
+            </tbody>
+        </table>
+        {% include "global/partials/_pagination.html" %}
+    </div>
+    {% else %}
+    <div class="single-contact center">
+        <h1 class="single-contact-name">
+            Nenhum usuário encontrado.
+        </h1>
+    </div>
+{% endif %}
+{% endblock content %}
