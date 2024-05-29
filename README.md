@@ -1,6 +1,8 @@
 # REST API Operações CRUD com Django Templates
 
-<img src="https://servidor-estatico-tan.vercel.app/rest_api_crud_templates.avif"/>
+## Apresentação do projeto
+
+https://github.com/guicamargo19/fullstack_rest_api_templates/assets/133445061/80a6221e-6859-4e73-98b6-08e026501264
 
 O projeto viabiliza a criação de um usuário com a integral preservação de todos os seus dados. Através de uma
 interface Front-end simples, minimalista e intuitiva, construída com **Django Templates**, são executáveis operações CRUD (Create, Read, Update, Delete).
