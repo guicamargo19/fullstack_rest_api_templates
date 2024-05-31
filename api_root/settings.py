@@ -34,8 +34,6 @@ environ.Env.read_env(env_file=str(BASE_DIR / '.env'))
 # SECURITY WARNING: don't run with debug turned on in production!
 # DEBUG = 1
 
-# ALLOWED_HOSTS: list[str] = ["127.0.0.1", "localhost", "0.0.0.0"]
-
 SECRET_KEY = env('SECRET_KEY')
 
 # SECURITY WARNING: don't run with debug turned on in production!
